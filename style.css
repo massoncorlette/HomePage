@@ -21,12 +21,25 @@ body {
   background-color: var(--primaryColor);
 }
 
+body:hover {
+  cursor: default;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   width: 90%;
   height: 95%;
   display: grid;
   grid-template-columns: repeat(10, 1fr); /*use a minmax upon mobile media*/
   grid-template-rows: repeat(100, 1fr);
+}
+
+a {
+  text-decoration: none; 
+  color: var(--fontColor);
 }
 
 #headerContainer, #introductionContainer, #skillsContainer, #projectsContainer {
@@ -78,6 +91,7 @@ main {
 
 #introductionContainer {
   grid-row: 5/30;
+
 }
 
 #skillsContainer {
@@ -92,6 +106,53 @@ main {
 footer {
   width: 90%;
   height: 5%;
+}
+
+h1 {
+  animation-duration: 2s;
+  animation-name: slide-in, font-ease;
+}
+
+#pageLinks {
+  animation-duration: 2s;
+  animation-name: slide-in-alt;
+}
+
+a {
+  animation-duration: 2s;
+  animation-name: font-ease;
+}
+
+@keyframes font-ease {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    translate: -10%;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+@keyframes slide-in-alt {
+  from {
+    translate: 10%;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
 }
 
 
