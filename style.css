@@ -97,6 +97,9 @@ footer {
 
 /* tablet */
 @media (max-width: 850px) {
+  body {
+  height: 400vh;
+  }
   h1 {
     font-size: 1rem;
     align-self: center;
@@ -131,6 +134,11 @@ footer {
 
 /* mobile */ 
 @media (max-width: 550px) {
+
+  body {
+  height: 500vh;
+  }
+
   h1 {
     grid-row: 1/3;
   }
@@ -145,9 +153,22 @@ footer {
   #headertxt, #gitLogo, #pageLinks {
     grid-row: span 4;
   }  
+
+  #headerContainer {
+    grid-row: 1/3;
+  }
+
   
   #introductionContainer {
-    grid-row: 3/30;
+    grid-row: 3/20;
+  }
+
+  #skillsContainer {
+    grid-row: 20/30;
+  }
+
+  #projectsContainer {
+  grid-row: 30/101;
   }
 
   #pageLinks {
