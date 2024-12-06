@@ -18,9 +18,25 @@ main {
   grid-template-rows: repeat(100, 1fr);
 }
 
+h1, #introductionContainer, #skillsContainer, #projectsContainer {
+  grid-column: span 10;
+}
+
 h1 {
   grid-row: 1/5;
-  grid-column: span 10;
+  margin: 0%;
+}
+
+#introductionContainer {
+  grid-row: 5/30;
+}
+
+#skillsContainer {
+  grid-row: 30/40;
+}
+
+#projectsContainer {
+  grid-row: 40/101;
   margin: 0%;
 }
 
@@ -43,6 +59,10 @@ footer {
     height: 96%;
   }
 
+  #introductionContainer {
+    grid-row: 4/30;
+  }
+
 }
 
 /* mobile */ 
@@ -56,6 +76,10 @@ footer {
 
   main {
     height: 97%;
+  }
+  
+  #introductionContainer {
+    grid-row: 3/30;
   }
 }
 
