@@ -1,13 +1,24 @@
 * {border: solid red 1px; box-sizing: border-box;} /*border-box maintains width on elements for padding, margin */
 
 
+:root {
+  --primaryColor:rgb(34, 34, 34);
+  --fontColor:rgb(255, 255, 255);
+}
+
 body {
   display: flex;
   flex-direction: column;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight:300;
+  font-style: normal;
+  color: var(--fontColor);
   align-items: center;
   height: 300vh;
   width: 100%;
   margin: 0%;
+  background-color: var(--primaryColor);
 }
 
 main {
@@ -18,13 +29,51 @@ main {
   grid-template-rows: repeat(100, 1fr);
 }
 
-h1, #introductionContainer, #skillsContainer, #projectsContainer {
+#headerContainer, #introductionContainer, #skillsContainer, #projectsContainer {
   grid-column: span 10;
 }
 
-h1 {
+#headerContainer {
   grid-row: 1/5;
   margin: 0%;
+  display: grid;
+  grid-template-columns: repeat(20,1fr);
+  grid-template-rows: repeat(4,1fr);
+}
+
+#headertxt, #gitLogo, #pageLinks {
+  grid-row: 2/3;
+}
+
+#headertxt {
+  grid-column: 2/6;
+  display: flex;
+  justify-content: center;
+}
+
+#gitLogo {
+  grid-column: 8/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pageLinks {
+  grid-column: 14/19;
+}
+
+#logo {
+  width: 50px;
+  height: auto;
+}
+
+#pageLinks {
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #introductionContainer {
@@ -47,9 +96,10 @@ footer {
 
 
 /* tablet */
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   h1 {
-    grid-row: 1/4;
+    font-size: 1rem;
+    align-self: center;
   }
   footer {
     height: 4%;
@@ -59,8 +109,22 @@ footer {
     height: 96%;
   }
 
+  #headertxt, #gitLogo, #pageLinks {
+    grid-row: span 4;
+  }
+
+
   #introductionContainer {
     grid-row: 4/30;
+  }
+
+  #pageLinks {
+    flex-direction: column;
+    font-size: 0.75rem;
+  }
+
+  #logo {
+    width: 35px;
   }
 
 }
@@ -77,9 +141,21 @@ footer {
   main {
     height: 97%;
   }
+
+  #headertxt, #gitLogo, #pageLinks {
+    grid-row: span 4;
+  }  
   
   #introductionContainer {
     grid-row: 3/30;
+  }
+
+  #pageLinks {
+    font-size: 0.60rem;
+  }
+
+  #logo {
+    width: 30px;
   }
 }
 
