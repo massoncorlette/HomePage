@@ -2,7 +2,7 @@
 
 
 :root {
-  --primaryColor:rgb(34, 34, 34);
+  --primaryColor:rgb(5, 5, 5);
   --fontColor:rgb(255, 255, 255);
 }
 
@@ -42,7 +42,7 @@ a {
   color: var(--fontColor);
 }
 
-#headerContainer, #introductionContainer, #skillsContainer, #projectsContainer {
+#headerContainer, #introductionContainer, #projectsContainer {
   grid-column: span 10;
 }
 
@@ -71,9 +71,7 @@ a {
   align-items: center;
 }
 
-#pageLinks {
-  grid-column: 14/19;
-}
+
 
 #logo {
   width: 50px;
@@ -81,6 +79,7 @@ a {
 }
 
 #pageLinks {
+  grid-column: 14/19;
   font-weight: 500;
   font-size: 14px;
   display: flex;
@@ -91,11 +90,67 @@ a {
 
 #introductionContainer {
   grid-row: 5/30;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr); 
+}
 
+#introductionTxtContainer {
+  grid-column: 2/span 3;
+  grid-row: 2/8;
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  grid-template-rows: repeat(10,1fr);
+  animation-duration: 2s;
+  animation-name: font-ease;  
+}
+
+h2 {
+  grid-row: 1/2;
+  grid-column: span 11;
+}
+
+#introTxt {
+  grid-column: span 11;
+  grid-row: 2/10;
+}
+
+#imageContainer {
+  grid-column: 6/10;
+  grid-row: 2/8;
+  background-image: url('images/citylights.jpg');
+  background-size: cover;
+  animation-duration: 2s;
+  animation-name: font-ease;  
+  
 }
 
 #skillsContainer {
+  grid-column: 3/9;
   grid-row: 30/40;
+  display: flex;
+}
+
+#skillL {
+  animation-duration: 2s;
+  animation-name: slide-in-alt, font-ease;
+}
+
+#skillR {
+  animation-duration: 2s;
+  animation-name: slide-in, font-ease;  
+}
+
+.skill {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillLogo {
+  width: 100px;
+  height: auto;
 }
 
 #projectsContainer {
@@ -155,6 +210,29 @@ a {
   }
 }
 
+/* minimize */ 
+@media (max-width: 1200px) {
+  #imageContainer {
+    grid-column: 5/10;
+    grid-row: 2/8;
+    z-index: -1;
+    animation-duration: 1s;
+    animation-name: slide-in-alt;
+  }
+
+  #introductionTxtContainer {
+    grid-column: 2/6;
+    grid-row: 2/8;
+    animation-duration: 1s;
+    animation-name: slide-in;
+  }
+
+  #pageLinks {
+    justify-content: space-between;
+    grid-column: 12/19;
+  }
+}
+
 
 /* tablet */
 @media (max-width: 850px) {
@@ -177,19 +255,45 @@ a {
     grid-row: span 4;
   }
 
+  #headerContainer {
+    grid-row: 1/4;
+  }
+
 
   #introductionContainer {
-    grid-row: 4/30;
+    grid-row: 4/25;
+  }
+
+  #skillsContainer {
+    grid-row: 25/40;
+    flex-direction: column;
+  }
+
+  .skillLogo {
+    width: 30%;
   }
 
   #pageLinks {
-    flex-direction: column;
     font-size: 0.75rem;
   }
 
   #logo {
     width: 35px;
   }
+
+  #imageContainer {
+    grid-column: 1/11;
+    grid-row: 4/11;
+    z-index: -1;
+    animation-duration: 0.5s;
+    animation-name: font-ease;  
+  }
+
+  #introductionTxtContainer {
+    grid-column: 2/10;
+    grid-row: 1/6;
+  }
+
 
 }
 
@@ -222,6 +326,17 @@ a {
   
   #introductionContainer {
     grid-row: 3/20;
+  }
+
+  #introductionTxtContainer {
+    grid-column: 2/10;
+    grid-row: 1/6;
+  }
+
+  #imageContainer {
+    grid-column: 1/11;
+    grid-row: 4/11;
+    z-index: -1;
   }
 
   #skillsContainer {
