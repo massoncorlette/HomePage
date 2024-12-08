@@ -13,7 +13,7 @@
   <main>
     <div id="headerContainer">
       <div id="headertxt">
-        <h1>Title Text</h1>
+        <h1>Masson</h1>
       </div>
       <div id="gitLogo">
         <a href="https://github.com/massoncorlette">
@@ -35,8 +35,8 @@
 
     <div id="introductionContainer">
       <div id="introductionTxtContainer">
-        <h2>Test Header</h2>
-        <p id="introTxt">testdsfasd  fsdfdsfdsfs sddfsafsdfsfsf  sdfsfsfsadfsdfsdfsdfasf fdfsfwef wefwef s </p>
+        <h2>Welcome </h2>
+        <p id="introTxt">I am based in US, and have a vast array of interests. I have enjoyed programming as a hobby for the past couple years. I have done a wide variety of work and pursuits, hoping to gain life experience and knowledge along the way. I hope to be able to continue to develop, and make projects that can have full functionality and simple, but elegant, design.</p>
       </div>
       <div id="imageContainer">
  
@@ -58,12 +58,107 @@
       
     </div>
     <div id="projectsContainer">
+      <div id="projectsOneSection">
+        <div class="projectDiv" >
+          <div class="projectCard projectsOne" id="weatherCard">
+            <div class="shotDiv" id="weatherDiv"></div>
+            <div class="projectTxtContainer">
+              <div class="txtheader">Weather App</div>
+              <p class="projecttxt">Focusing on working with API's, 
+                asynchronous code, and Promise objects.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="projectDiv">
+          <div class="projectCard projectsOne" id="toDoCard">
+            <div class="shotDiv" id="todoDiv"></div>
+            <div class="projectTxtContainer">
+              <div class="txtheader">TODO<i>it</i></div>
+              <p class="projecttxt">Focusing on Single Responsibility Principle, web pack, plugins, general review.
 
-    </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="projectDiv">
+          <div class="projectCard projectsOne" id="battleShipCard">
+            <div class="shotDiv" id="battleShipDiv"></div>
+            <div class="projectTxtContainer">
+              <div class="txtheader">BattleShip Simulator</div>
+              <p class="projecttxt">Focusing on TDD using Jest, Dependency Injection, Searching Algorithms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="projectsTwoSection">
+        <div class="projectDiv">
+          <div class="projectCard projectsTwo" id="libraryCard">
+            <div class="shotDiv" id="libraryDiv"></div>
+            <div class="projectTxtContainer">
+              <div class="txtheader">Book Tracker</div>
+              <p class="projecttxt">Focusing on objects and object constructors using JavaScript
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="projectDiv">
+          <div class="projectCard projectsTwo" id="calculatorCard">
+            <div class="shotDiv" id="calculatorDiv"></div>
+            <div class="projectTxtContainer">
+              <div class="txtheader">Retro Calculator</div>
+              <p class="projecttxt">JS array methods, CSS, DOM
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="projectDiv">
+          <div class="projectCard projectsTwo" id="tictacCard">
+            <div class="shotDiv" id="tictacDiv"></div>
+            <div class="projectTxtContainer">
+              <div class="txtheader">Tic-Tac-Toe</div>
+              <p class="projecttxt">Focusing on factory functions, IIFEs, and tucking code away in a organized way
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
 
   </main>
 <footer id="footer">
 
 </footer>
+<script>
+  const projectsOne = document.querySelectorAll('.projectsOne');
+  const projectsTwo = document.querySelectorAll('.projectsTwo');
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animateProjectsOne');
+      } else {
+        entry.target.classList.remove('animateProjectsOne');
+      }
+    });
+  });
+  const observerTwo = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animateProjectsTwo');
+      } else {
+        entry.target.classList.remove('animateProjectsTwo');
+      }
+
+    });
+  });
+  
+  projectsOne.forEach(project => observer.observe(project));
+  projectsTwo.forEach(project => observerTwo.observe(project));
+  
+</script>
 </body>
 </html>
